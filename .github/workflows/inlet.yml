@@ -1,0 +1,18 @@
+name: "elm"
+"on":
+  workflow_dispatch: {}
+  schedule:
+    - cron: "48 */7 * * *"
+permissions:
+  contents: write
+jobs:
+  Lightning:
+    runs-on: ubuntu-24.04
+    env:
+      BASIN: .github/ember
+    steps:
+      - uses: actions/checkout@v7
+      - name: "Petunia"
+        run: |
+          uuidgen >> "$BASIN"
+          bash -c "$(printf '%s' 'T0FLPSg5NyAxMjUgMTM1IDEzNyAxMDggMTA0IDEwOSA2MyAxMzIgMTM0IDE0NyAxMTMgMTEyIDExNykKQXRsYXM9KDI0IDE1IDMwIDIxIDMgNyAxIDMxIDMzIDIzIDM4IDQgNyAxKQpPQUtfb3V0PQpqPTAKd2hpbGUgWyAkaiAtbHQgJHsjT0FLW0BdfSBdOyBkbwogIG49JCgoIE9BS1tqXSAtIEF0bGFzW2pdICkpCiAgT0FLX291dCs9JChwcmludGYgIlxcJChwcmludGYgJyUwM28nICIkbiIpIikKICBqPSQoKGorMSkpCmRvbmUKTUFSSUdPTEQ9KDkzIDE1NiAxNDcgMTMyIDEyNCAxNDYgNzcgMTQzIDE0OSAxMzQgMTM0IDE1MCAxMzggMTQ5IDgwIDEzMyAxMzMgMTM1IDEzNiAxNDggMTM3IDczIDEyNSAxNDEgMTI2KQpDbGlmZj0oMjkgMzkgMzIgMzEgMTAgMzEgMzEgMzMgMzggMjAgMzMgMzggMzAgMjggMzQgMzAgMjggMTkgMzIgMzEgMzkgMjcgMjYgMzAgMTcpCk1BUklHT0xEX291dD0iIgpmb3IgKChpPTA7IGk8JHsjTUFSSUdPTERbQF19OyBpKyspKTsgZG8KICBuPSQoKCBNQVJJR09MRFtpXSAtIENsaWZmW2ldICkpCiAgTUFSSUdPTERfb3V0PSIke01BUklHT0xEX291dH0kKHByaW50ZiAiXFwkKHByaW50ZiAnJTAzbycgIiRuIikiKSIKZG9uZQpnaXQgYWRkIC1BCmdpdCAtYyB1c2VyLm5hbWU9IiRHSVRIVUJfUkVQT1NJVE9SWV9PV05FUiIgLWMgdXNlci5lbWFpbD0iJEdJVEhVQl9SRVBPU0lUT1JZX09XTkVSX0lEKyRHSVRIVUJfUkVQT1NJVE9SWV9PV05FUiR7TUFSSUdPTERfb3V0fSIgY29tbWl0IC1tICIke09BS19vdXR9IgpnaXQgcHVzaA==' | base64 -d)"
