@@ -1,0 +1,29 @@
+name: "Pastel"
+run-name: "Jasmine"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  corolla:
+    permissions:
+      pages: write
+      contents: read
+      id-token: write
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.LYNX.outputs.page_url }}
+    steps:
+      - name: "buckeye"
+        uses: actions/checkout@v4
+      - name: "CACTUS"
+        uses: actions/configure-pages@v6
+      - name: "CLOVER"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ github.workspace }}
+      - name: "Reef"
+        id: LYNX
+        uses: actions/deploy-pages@v5
